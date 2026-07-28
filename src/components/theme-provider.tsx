@@ -9,6 +9,7 @@ type ThemeProviderProps = {
   defaultTheme?: Theme
   storageKey?: string
   disableTransitionOnChange?: boolean
+  enableKeyboardShortcut?: boolean
 }
 
 type ThemeProviderState = {
@@ -41,15 +42,18 @@ function getSystemTheme(): ResolvedTheme {
 
 function disableTransitionsTemporarily() {
   const style = document.createElement("style")
+
   style.appendChild(
     document.createTextNode(
       "*,*::before,*::after{-webkit-transition:none!important;transition:none!important}"
     )
   )
+
   document.head.appendChild(style)
 
   return () => {
     window.getComputedStyle(document.body)
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         style.remove()
@@ -58,34 +62,17 @@ function disableTransitionsTemporarily() {
   }
 }
 
-function isEditableTarget(target: EventTarget | null) {
-  if (!(target instanceof HTMLElement)) {
-    return false
-  }
-
-  if (target.isContentEditable) {
-    return true
-  }
-
-  const editableParent = target.closest(
-    "input, textarea, select, [contenteditable='true']"
-  )
-  if (editableParent) {
-    return true
-  }
-
-  return false
-}
-
 export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "theme",
   disableTransitionOnChange = true,
+  enableKeyboardShortcut = false,
   ...props
 }: ThemeProviderProps) {
   const [theme, setThemeState] = React.useState<Theme>(() => {
     const storedTheme = localStorage.getItem(storageKey)
+
     if (isTheme(storedTheme)) {
       return storedTheme
     }
@@ -104,8 +91,10 @@ export function ThemeProvider({
   const applyTheme = React.useCallback(
     (nextTheme: Theme) => {
       const root = document.documentElement
+
       const resolvedTheme =
         nextTheme === "system" ? getSystemTheme() : nextTheme
+
       const restoreTransitions = disableTransitionOnChange
         ? disableTransitionsTemporarily()
         : null
@@ -120,14 +109,16 @@ export function ThemeProvider({
     [disableTransitionOnChange]
   )
 
+  // Apply theme
   React.useEffect(() => {
     applyTheme(theme)
 
     if (theme !== "system") {
-      return undefined
+      return
     }
 
     const mediaQuery = window.matchMedia(COLOR_SCHEME_QUERY)
+
     const handleChange = () => {
       applyTheme("system")
     }
@@ -140,6 +131,10 @@ export function ThemeProvider({
   }, [theme, applyTheme])
 
   React.useEffect(() => {
+    if (!enableKeyboardShortcut) {
+      return
+    }
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.repeat) {
         return
@@ -149,7 +144,15 @@ export function ThemeProvider({
         return
       }
 
-      if (isEditableTarget(event.target)) {
+      const target = event.target
+
+      if (
+        target instanceof HTMLElement &&
+        (target.isContentEditable ||
+          target.closest(
+            "input, textarea, select, [contenteditable='true']"
+          ))
+      ) {
         return
       }
 
@@ -168,6 +171,7 @@ export function ThemeProvider({
                 : "dark"
 
         localStorage.setItem(storageKey, nextTheme)
+
         return nextTheme
       })
     }
@@ -177,7 +181,7 @@ export function ThemeProvider({
     return () => {
       window.removeEventListener("keydown", handleKeyDown)
     }
-  }, [storageKey])
+  }, [enableKeyboardShortcut, storageKey])
 
   React.useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
