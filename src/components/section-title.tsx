@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-
 import { Button } from "@/components/ui/button"
 
 export function SectionTitle() {
@@ -15,7 +14,7 @@ export function SectionTitle() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const title =
-              entry.target.querySelector("h2")?.textContent ?? ""
+              entry.target.getAttribute("data-title") ?? ""
 
             setActiveTitle(title)
           }
