@@ -58,7 +58,7 @@ export default function YellowCardOverlay({
               {/* Left Content */}
               <div className="flex items-center gap-[0.8vw]">
                 {/* Team Logo */}
-                <div className="flex h-[2.5vw] min-h-[40px] w-[3.5vw] min-w-[48px] items-center justify-center overflow-hidden rounded-tr-[12px] rounded-bl-[12px] bg-white p-1 shadow-sm">
+                <div className="flex h-[2.5vw] min-h-10 w-[3.5vw] min-w-12 items-center justify-center overflow-hidden rounded-tr-[12px] rounded-bl-[12px] bg-white p-1 shadow-sm">
                   {typeof teamLogo === "string" ? (
                     <img
                       src={teamLogo}
@@ -79,13 +79,13 @@ export default function YellowCardOverlay({
               </div>
 
               {/* Yellow Card */}
-              <div className="rder-yellow-300 flex h-[2.5vw] min-h-[32px] w-[1.5vw] min-w-[32px] items-center justify-center bg-[#EAB308] shadow-md"></div>
+              <div className="rder-yellow-300 flex h-[2.5vw] min-h-8 w-[1.5vw] min-w-8 items-center justify-center bg-[#EAB308] shadow-md"></div>
             </div>
           </div>
 
           {/* Bottom Label */}
           <div
-            className="flex h-[2.5vw] min-h-[28px] items-center justify-center text-[1.5vw] text-white/90 uppercase shadow-inner"
+            className="flex h-[2.5vw] min-h-7 items-center justify-center text-[1.5vw] text-white/90 uppercase shadow-inner"
             style={{
               backgroundColor: darkGrey,
             }}
@@ -95,8 +95,8 @@ export default function YellowCardOverlay({
         </div>
 
         {/* Tournament Logo */}
-        <div
-          className="mb-16 flex h-[2.5vw] min-h-[56px] w-[1vw] min-w-[56px] items-center justify-center overflow-hidden rounded-2xl shadow-xl"
+        <div 
+          className="mb-16 flex h-[2.5vw] min-h-14 w-[1vw] min-w-14 items-center justify-center overflow-hidden rounded-2xl shadow-xl"
           style={{
             backgroundColor: logoBlack,
           }}

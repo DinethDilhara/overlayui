@@ -1,19 +1,16 @@
 import type { ReactNode } from "react"
-import ball from "@/assets/soccer-ball.svg"
 
-interface GoalNameCardProps {
+interface CoachCardProps {
   teamLogo?: ReactNode | string
-  playerNumber: string | number
-  playerName: string
+  coachName: string
   tournamentLogo?: ReactNode | string
 }
 
-export default function GoalNameCard({
+export default function CoachCard({
   teamLogo,
-  playerNumber,
-  playerName,
+  coachName,
   tournamentLogo,
-}: GoalNameCardProps) {
+}: CoachCardProps) {
   const green = "#257723"
   const red = "#921E23"
   const blue = "#0775B1"
@@ -55,38 +52,24 @@ export default function GoalNameCard({
             />
 
             {/* Inner Black Content */}
-            <div className="absolute inset-[0.6vw] z-10 flex items-center justify-between rounded-xl bg-black px-[0.8vw]">
-              {/* Left Content */}
-              <div className="flex items-center gap-[0.8vw]">
-                {/* Team Logo */}
-                <div className="flex h-[2.5vw] min-h-10 w-[3.5vw] min-w-10 items-center justify-center overflow-hidden rounded-tr-[12px] rounded-bl-[12px] bg-white p-1 shadow-sm">
-                  {typeof teamLogo === "string" ? (
-                    <img
-                      src={teamLogo}
-                      alt="Team Logo"
-                      className="h-full w-full object-contain"
-                    />
-                  ) : (
-                    teamLogo
-                  )}
-                </div>
-
-                {/* Player Name */}
-                <span className="pl-12 text-[1.9vw] font-semibold tracking-wide text-white uppercase drop-shadow-md">
-                  {playerNumber}
-                  &nbsp;&nbsp;&nbsp;
-                  {playerName}
-                </span>
+            <div className="absolute inset-[0.6vw] z-10 flex items-center justify-center rounded-xl bg-black px-[0.8vw]">
+              {/* Team Logo - Left Corner */}
+              <div className="absolute left-[0.8vw] flex h-[2.5vw] min-h-10 w-[3.5vw] min-w-12 items-center justify-center overflow-hidden rounded-tr-[12px] rounded-bl-[12px] bg-white p-1 shadow-sm">
+                {typeof teamLogo === "string" ? (
+                  <img
+                    src={teamLogo}
+                    alt="Team Logo"
+                    className="h-full w-full object-contain"
+                  />
+                ) : (
+                  teamLogo
+                )}
               </div>
 
-              {/* Goal Icon */}
-              <div className="flex h-[2.5vw] min-h-10 w-[2.5vw] min-w-10 items-center justify-center">
-                <img
-                  src={ball}
-                  alt="Soccer Ball"
-                  className="h-full w-full object-contain"
-                />
-              </div>
+              {/* Coach Name*/}
+              <span className="text-center text-[1.9vw] font-semibold tracking-wide text-white uppercase drop-shadow-md">
+                {coachName}
+              </span>
             </div>
           </div>
 
@@ -97,13 +80,13 @@ export default function GoalNameCard({
               backgroundColor: darkGrey,
             }}
           >
-            GOAL
+            HEAD COACH
           </div>
         </div>
 
         {/* Tournament Logo */}
         <div
-          className="mb-16 flex h-[2.5vw] min-h-14 w-[1vw] min-w-14 items-center justify-center overflow-hidden rounded-2xl shadow-xl"
+          className="flex h-[2.5vw] min-h-14 w-[1vw] min-w-14 items-center justify-center self-center overflow-hidden rounded-2xl shadow-xl"
           style={{
             backgroundColor: logoBlack,
           }}
