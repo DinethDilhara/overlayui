@@ -4,6 +4,9 @@ import { SectionNavigation } from "@/components/section-navigation"
 import { SectionTitle } from "@/components/section-title"
 
 import { MatchIntro } from "@/components/overlayui/01.match-intro"
+import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
+import RedCardOverlay from "@/components/overlayui/21.red-card"
+import GoalNameCard from "@/components/overlayui/22.goal-name-card"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
@@ -81,12 +84,36 @@ const sections = [
   },
   {
     title: "Yellow Card Name",
+    component: (
+      <YellowCardOverlay
+        teamLogo={team01Logo}
+        playerNumber="8"
+        playerName="AMAN FAIZER"
+        tournamentLogo={wcLogo}
+      />
+    ),
   },
   {
     title: "Red Card Name",
+    component: (
+      <RedCardOverlay
+        teamLogo={team01Logo}
+        playerNumber="8"
+        playerName="AMAN FAIZER"
+        tournamentLogo={wcLogo}
+      />
+    ),
   },
   {
     title: "Goal Name",
+    component: (
+      <GoalNameCard
+        teamLogo={team01Logo}
+        playerNumber="8"
+        playerName="AMAN FAIZER"
+        tournamentLogo={wcLogo}
+      />
+    ),
   },
 ]
 

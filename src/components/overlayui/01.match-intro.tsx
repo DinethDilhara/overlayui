@@ -39,7 +39,7 @@ export function MatchIntro({
         <div className="grid flex-1 grid-cols-[1.4fr_0.8fr_1.4fr] gap-6 rounded-3xl bg-[#232323] shadow-2xl">
           {/* Home Team Logo */}
           <div className="flex items-center justify-center">
-            <div className="flex h-[60%] w-[85%] items-center justify-center rounded-tr-[90px] rounded-bl-[90px] bg-white">
+            <div className="flex h-[55%] w-[85%] items-center justify-center rounded-tr-[90px] rounded-bl-[90px] bg-white">
               <img
                 src={teamOneLogo}
                 alt="Home Team"
@@ -66,7 +66,7 @@ export function MatchIntro({
 
           {/* Away Team Logo */}
           <div className="flex items-center justify-center">
-            <div className="flex h-[60%] w-[85%] items-center justify-center rounded-tr-[90px] rounded-bl-[90px] bg-white">
+            <div className="flex h-[55%] w-[85%] items-center justify-center rounded-tr-[90px] rounded-bl-[90px] bg-white">
               <img
                 src={teamTwoLogo}
                 alt="Away Team"

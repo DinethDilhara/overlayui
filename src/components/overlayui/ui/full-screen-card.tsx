@@ -13,7 +13,7 @@ export default function OverlayLayout({ children }: OverlayLayoutProps) {
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-transparent">
       {/* Main Card */}
-      <div className="absolute top-34 bottom-24 left-24 right-24 overflow-hidden rounded-3xl shadow-2xl">
+      <div className="absolute top-24 bottom-24 left-24 right-24 overflow-hidden rounded-3xl shadow-2xl">
         {/* Background Layer */}  
         <div className="absolute inset-0 z-0">
           {/* Top */}
