@@ -9,12 +9,15 @@ import CoachCard from "@/components/overlayui/19.coach-card"
 import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
 import RedCardOverlay from "@/components/overlayui/21.red-card"
 import GoalNameCard from "@/components/overlayui/22.goal-name-card"
-import WeatherCard from "./components/overlayui/02.weather-card"
-import SubstitutesInCard from "./components/overlayui/18.substitutes-in-card"
-import SubstitutesOutCard from "./components/overlayui/18.substitutes-out-card"
-import HalfTimeCard from "./components/overlayui/16.half-time-card"
-import ScoreboardOverlay from "./components/overlayui/14.score-bug-lower-third"
-import TeamsNamesLowerThird from "./components/overlayui/17.team-names-lower-third"
+import WeatherCard from "@/components/overlayui/02.weather-card"
+import SubstitutesInCard from "@/components/overlayui/18.substitutes-in-card"
+import SubstitutesOutCard from "@/components/overlayui/18.substitutes-out-card"
+import HalfTimeCard from "@/components/overlayui/16.half-time-card"
+import ScoreboardOverlay from "@/components/overlayui/14.score-bug-lower-third"
+import TeamsNamesLowerThird from "@/components/overlayui/17.team-names-lower-third"
+import ScoreBugCard from "@/components/overlayui/12.score-bug-card"
+import ScoreBugExtraTimeCard from "@/components/overlayui/13.score-bug-extra-time-card"
+import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
@@ -62,6 +65,16 @@ const sections = [
   },
   {
     title: "Match Officials",
+    component: (
+      <MatchOfficialsCard
+        tournamentLogo={wcLogo}
+        referee="SASHANKA MADUSHANKA"
+        assistantReferee1="KUSHAN INDIKA"
+        assistantReferee2="NIMASHA THENNAKOON"
+        fourthOfficial="VIHANGA MADUWANTHA"
+        refereeColor="#7ED8FF"
+      />
+    ),
   },
   {
     title: "Team A Card with Playing Names",
@@ -77,9 +90,41 @@ const sections = [
   },
   {
     title: "Score Bug (Team Short Name, Logo, Jersey Color, Score, Time)",
+    component: (
+      <ScoreBugCard
+        matchTimer="64:21"
+        tournamentName="SUPER LEAGUE 2026"
+        tournamentLogo={wcLogo}
+        homeTeamShortName="COL"
+        homeTeamLogo={team01Logo}
+        homeTeamScore={2}
+        homeTeamJerseyColor="#008AAF"
+        awayTeamShortName="KAN"
+        awayTeamLogo={team02Logo}
+        awayTeamScore={1}
+        awayTeamJerseyColor="#ffffff"
+      />
+    ),
   },
   {
     title: "Extra Time",
+    component: (
+      <ScoreBugExtraTimeCard
+        matchTimer="64:21"
+        extraTimer="00:12"
+        extraTime="5"
+        tournamentName="SUPER LEAGUE 2026"
+        tournamentLogo={wcLogo}
+        homeTeamShortName="COL"
+        homeTeamLogo={team01Logo}
+        homeTeamScore={0}
+        homeTeamJerseyColor="#008AAF"
+        awayTeamShortName="KAN"
+        awayTeamLogo={team02Logo}
+        awayTeamScore={0}
+        awayTeamJerseyColor="#ffffff"
+      />
+    ),
   },
   {
     title: "Score Bug Lower Third",
