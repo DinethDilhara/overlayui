@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, ChevronsUp } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { useSound } from "@/hooks/use-sound"
@@ -52,6 +52,18 @@ export function SectionNavigation() {
     }
   }
 
+
+  const scrollToTop = () => {
+    play()
+
+    document
+      .getElementById("section-1")
+      ?.scrollIntoView({
+        behavior: "smooth",
+      })
+  }
+
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
@@ -82,8 +94,19 @@ export function SectionNavigation() {
     }
   }, [])
 
+
   return (
     <div className="fixed top-17 right-6 z-50 flex flex-col gap-2">
+      {/* GO TOP */}
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={scrollToTop}
+      >
+        <ChevronsUp />
+      </Button>
+
+      {/* PREVIOUS */}
       <Button
         variant="outline"
         size="icon"
@@ -92,6 +115,7 @@ export function SectionNavigation() {
         <ChevronUp />
       </Button>
 
+      {/* NEXT */}
       <Button
         variant="outline"
         size="icon"

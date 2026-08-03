@@ -7,7 +7,7 @@ import MatchIntro from "@/components/overlayui/01.match-intro"
 import WeatherCard from "@/components/overlayui/02.weather-card"
 import PointTableCard from "@/components/overlayui/03.point-table-card"
 import FixturesCard from "@/components/overlayui/04.fixtures-card"
-import FixturesNResultsCard from "./components/overlayui/05.fixtures-results-card"
+import FixturesNResultsCard from "@/components/overlayui/05.fixtures-results-card"
 import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
 import TeamPlayersCard from "@/components/overlayui/08.team-players-card"
 import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
@@ -24,6 +24,8 @@ import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
 import RedCardOverlay from "@/components/overlayui/21.red-card"
 import GoalNameCard from "@/components/overlayui/22.goal-name-card"
 
+import OverlayShowcase from "@/components/overlay-showcase"
+
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
 import wcLogo from "@/assets/wc-logo.jpg"
@@ -31,6 +33,10 @@ import playerImgOne from "@/assets/player-1-img.png"
 import playerImgTwo from "@/assets/player-2-img.png"
 
 const sections = [
+  {
+    title: "Overlay Showcase",
+    component: <OverlayShowcase />,
+  },
   {
     title: "Match Intro",
     component: (
