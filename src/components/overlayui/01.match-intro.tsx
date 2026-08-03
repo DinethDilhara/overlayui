@@ -11,7 +11,7 @@ export interface MatchIntroProps {
   match?: string
 }
 
-export function MatchIntro({
+export default function MatchIntro({
   teamOneName,
   teamTwoName,
   teamOneLogo,
@@ -23,7 +23,7 @@ export function MatchIntro({
 }: MatchIntroProps) {
   return (
     <OverlayLayout>
-      <div className="flex h-full w-full flex-col gap-3 px-3 p-3 pb-2">
+      <div className="flex h-full w-full flex-col gap-3 p-3 px-3 pb-2">
         {/* Team Names */}
         <div className="grid h-24 grid-cols-2 gap-2">
           <div className="flex items-center justify-center rounded-3xl bg-[#232323] text-6xl font-bold text-white shadow-2xl">

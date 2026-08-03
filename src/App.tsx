@@ -3,7 +3,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { SectionNavigation } from "@/components/section-navigation"
 import { SectionTitle } from "@/components/section-title"
 
-import { MatchIntro } from "@/components/overlayui/01.match-intro"
+import MatchIntro from "@/components/overlayui/01.match-intro"
 import HydrationBreakBug from "@/components/overlayui/15.bug-hydration-break"
 import CoachCard from "@/components/overlayui/19.coach-card"
 import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
@@ -20,6 +20,7 @@ import ScoreBugExtraTimeCard from "@/components/overlayui/13.score-bug-extra-tim
 import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
 import TeamPlayersCard from "@/components/overlayui/08.team-players-card"
 import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
+import PointTableCard from "@/components/overlayui/03.point-table-card"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
@@ -57,6 +58,15 @@ const sections = [
   },
   {
     title: "Points Table",
+    component: (
+      <PointTableCard
+        tournamentLogo={wcLogo}
+        tournamentName="SUPER LEAGUE 2026"
+        organizerName="FOOTBALL SRI LANKA"
+        title="POINTS TABLE"
+        weekNumber="WEEK 1"
+      />
+    ),
   },
   {
     title: "Fixtures",
