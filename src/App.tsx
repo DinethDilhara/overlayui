@@ -4,23 +4,25 @@ import { SectionNavigation } from "@/components/section-navigation"
 import { SectionTitle } from "@/components/section-title"
 
 import MatchIntro from "@/components/overlayui/01.match-intro"
+import WeatherCard from "@/components/overlayui/02.weather-card"
+import PointTableCard from "@/components/overlayui/03.point-table-card"
+import FixturesCard from "@/components/overlayui/04.fixtures-card"
+import FixturesNResultsCard from "./components/overlayui/05.fixtures-results-card"
+import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
+import TeamPlayersCard from "@/components/overlayui/08.team-players-card"
+import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
+import ScoreBugCard from "@/components/overlayui/12.score-bug-card"
+import ScoreBugExtraTimeCard from "@/components/overlayui/13.score-bug-extra-time-card"
+import ScoreboardOverlay from "@/components/overlayui/14.score-bug-lower-third"
 import HydrationBreakBug from "@/components/overlayui/15.bug-hydration-break"
+import HalfTimeCard from "@/components/overlayui/16.half-time-card"
+import TeamsNamesLowerThird from "@/components/overlayui/17.team-names-lower-third"
+import SubstitutesInCard from "@/components/overlayui/18.substitutes-in-card"
+import SubstitutesOutCard from "@/components/overlayui/18.substitutes-out-card"
 import CoachCard from "@/components/overlayui/19.coach-card"
 import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
 import RedCardOverlay from "@/components/overlayui/21.red-card"
 import GoalNameCard from "@/components/overlayui/22.goal-name-card"
-import WeatherCard from "@/components/overlayui/02.weather-card"
-import SubstitutesInCard from "@/components/overlayui/18.substitutes-in-card"
-import SubstitutesOutCard from "@/components/overlayui/18.substitutes-out-card"
-import HalfTimeCard from "@/components/overlayui/16.half-time-card"
-import ScoreboardOverlay from "@/components/overlayui/14.score-bug-lower-third"
-import TeamsNamesLowerThird from "@/components/overlayui/17.team-names-lower-third"
-import ScoreBugCard from "@/components/overlayui/12.score-bug-card"
-import ScoreBugExtraTimeCard from "@/components/overlayui/13.score-bug-extra-time-card"
-import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
-import TeamPlayersCard from "@/components/overlayui/08.team-players-card"
-import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
-import PointTableCard from "@/components/overlayui/03.point-table-card"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
@@ -70,12 +72,27 @@ const sections = [
   },
   {
     title: "Fixtures",
+    component: (
+      <FixturesCard
+        tournamentLogo={wcLogo}
+        tournamentName="SUPER LEAGUE 2026"
+        organizerName="FOOTBALL SRI LANKA"
+        title="FIXTURES"
+        weekNumber="WEEK 1"
+      />
+    ),
   },
   {
     title: "Fixtures & Results",
-  },
-  {
-    title: "Results",
+    component: (
+      <FixturesNResultsCard
+        tournamentLogo={wcLogo}
+        tournamentName="SUPER LEAGUE 2026"
+        organizerName="FOOTBALL SRI LANKA"
+        title="FIXTURES & RESULTS"
+        weekNumber="WEEK 1"
+      />
+    ),
   },
   {
     title: "Match Officials",
