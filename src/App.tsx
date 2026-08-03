@@ -18,10 +18,14 @@ import TeamsNamesLowerThird from "@/components/overlayui/17.team-names-lower-thi
 import ScoreBugCard from "@/components/overlayui/12.score-bug-card"
 import ScoreBugExtraTimeCard from "@/components/overlayui/13.score-bug-extra-time-card"
 import MatchOfficialsCard from "@/components/overlayui/07.match-officials-card"
+import TeamPlayersCard from "@/components/overlayui/08.team-players-card"
+import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
 import wcLogo from "@/assets/wc-logo.jpg"
+import playerImgOne from "@/assets/player-1-img.png"
+import playerImgTwo from "@/assets/player-2-img.png"
 
 const sections = [
   {
@@ -78,15 +82,39 @@ const sections = [
   },
   {
     title: "Team A Card with Playing Names",
+    component: (
+      <TeamPlayersCard
+        tournamentLogo={wcLogo}
+        teamLogo={team01Logo}
+        teamName="RENOWN FC"
+        headCoachName="FAZLUR RAHUMAN"
+        captainImage={playerImgOne}
+      />
+    ),
   },
   {
     title: "Team B Card with Playing Names",
+    component: (
+      <TeamPlayersCard
+        tournamentLogo={wcLogo}
+        teamLogo={team02Logo}
+        teamName="RATNAM SC"
+        headCoachName="KASUN JAYASURIYA"
+        captainImage={playerImgTwo}
+      />
+    ),
   },
   {
     title: "Team A Card with Formation",
-  },
-  {
-    title: "Team B Card with Formation",
+    component: (
+      <TeamFormationCard
+        tournamentLogo={wcLogo}
+        teamLogo={team02Logo}
+        teamName="COLMBO FC"
+        headCoachName="KASUN JAYASURIYA"
+        formationType="4-3-3"
+      />
+    ),
   },
   {
     title: "Score Bug (Team Short Name, Logo, Jersey Color, Score, Time)",
