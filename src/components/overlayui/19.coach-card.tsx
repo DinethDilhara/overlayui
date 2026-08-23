@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-interface CoachCardProps {
+export interface CoachCardProps {
   teamLogo?: ReactNode | string
   coachName: string
   tournamentLogo?: ReactNode | string

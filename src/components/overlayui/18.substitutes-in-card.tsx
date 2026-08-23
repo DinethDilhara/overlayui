@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-interface SubstitutesInCardProps {
+export interface SubstitutesInCardProps {
   teamLogo?: ReactNode | string
   playerNumber: string | number
   playerName: string

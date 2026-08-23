@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-interface HydrationBreakBugProps {
+export interface HydrationBreakBugProps {
   tournamentLogo?: ReactNode | string
 }
 

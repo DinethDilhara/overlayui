@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-interface YellowCardOverlayProps {
+export interface YellowCardOverlayProps {
   teamLogo?: ReactNode | string
   playerNumber: string | number
   playerName: string

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import ball from "@/assets/soccer-ball.svg"
 
-interface GoalNameCardProps {
+export interface GoalNameCardProps {
   teamLogo?: ReactNode | string
   playerNumber: string | number
   playerName: string

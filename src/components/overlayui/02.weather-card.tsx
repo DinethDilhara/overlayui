@@ -13,7 +13,7 @@ import {
 export type WeatherStatus =
   "SUNNY" | "CLOUDY" | "PARTLY_CLOUDY" | "THUNDERSTORM" | "DRIZZLE"
 
-interface WeatherCardProps {
+export interface WeatherCardProps {
   weatherStatus: WeatherStatus
   temperature: number | string
   humidity: number | string
