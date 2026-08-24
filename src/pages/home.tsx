@@ -1,9 +1,12 @@
 import { Link } from "react-router"
-import { Navbar } from "@/components/layout/navbar"
-import { ArrowRight, Sparkles, MoveRight } from "lucide-react"
-import StickyFooter from "@/components/layout/sticky-footer"
 import { cn } from "@/utils/utils"
+import { ArrowRight, Sparkles, MoveRight } from "lucide-react"
+import { Navbar } from "@/components/layout/navbar"
+import StickyFooter from "@/components/layout/sticky-footer"
 import { AnimatedShinyText } from "@/components/animated-shiny-text"
+import { Backlight } from "@/components/backlight"
+import { SparklesText } from "@/components/sparkles-text"
+import { Highlighter } from "@/components/highlighter"
 
 export default function HomePage() {
   return (
@@ -30,14 +33,22 @@ export default function HomePage() {
 
                 {/* Title */}
                 <h1 className="mx-auto mt-4 max-w-4xl text-balance text-5xl font-semibold tracking-tight md:text-6xl lg:mt-8 xl:text-7xl">
-                  Broadcast overlays, beautifully connected
+                  <SparklesText>Broadcast overlays,</SparklesText>beautifully connected
                 </h1>
 
                 {/* Subtitle */}
                 <p className="mx-auto mt-4 max-w-2xl text-balance text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Every score bug, lower third, tactical formation, and match
-                  event in one living component library that helps teams
-                  elevate live streaming.
+                  Every score bug, lower third, tactical formation, and match event in one
+                  living component library that helps teams{" "}
+                  <Highlighter
+                    action="underline"
+                    color="#f59e0b"
+                    strokeWidth={2}
+                    animationDuration={600}
+                  >
+                    elevate live streaming
+                  </Highlighter>
+                  .
                 </p>
 
                 {/* Action Buttons */}
@@ -61,6 +72,7 @@ export default function HomePage() {
               </div>
 
               {/* Video Frame */}
+              <Backlight blur={30} className="w-full">
               <div className="relative mt-12 overflow-hidden p-2 sm:mt-16 sm:p-6">
                 <div className="relative rounded-2xl border border-border/60 bg-background p-2 shadow-2xl shadow-black/40 ring ring-foreground/10 backdrop-blur-sm sm:p-3">
                   <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
@@ -75,7 +87,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
+              </Backlight>
+              </div>
           </div>
         </section>
       </main>
