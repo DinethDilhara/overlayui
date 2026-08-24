@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 
-const DESIGN_WIDTH = 2560
-const DESIGN_HEIGHT = 1440
+const DESIGN_WIDTH = 1920
+const DESIGN_HEIGHT = 1080
 
 interface DesktopPreviewProps {
   children: ReactNode

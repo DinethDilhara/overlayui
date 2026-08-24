@@ -22,7 +22,7 @@ export function SectionTitle() {
       },
       {
         threshold: 0.6,
-      }
+      },
     )
 
     sections.forEach((section) => observer.observe(section))
@@ -33,7 +33,7 @@ export function SectionTitle() {
   return (
     <Button
       variant="outline"
-      className="fixed left-6 top-6 z-50"
+      className="bg-background/80 shadow-sm backdrop-blur"
     >
       {activeTitle}
     </Button>
