@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import GoalNameCard from "@/components/overlayui/22.goal-name-card"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import GoalNameCard from "@/components/overlayui/goal-name-card"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import team01Logo from "@/assets/team-01-logo.png"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 
 const CODE_SAMPLE = `import GoalNameCard from "@/components/overlayui/22.goal-name-card"
 import wcLogo from "@/assets/wc-logo.jpg"

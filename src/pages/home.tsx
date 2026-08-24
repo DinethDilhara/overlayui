@@ -3,10 +3,10 @@ import { cn } from "@/utils/utils"
 import { ArrowRight, Sparkles, MoveRight } from "lucide-react"
 import { Navbar } from "@/components/layout/navbar"
 import StickyFooter from "@/components/layout/sticky-footer"
-import { AnimatedShinyText } from "@/components/animated-shiny-text"
-import { Backlight } from "@/components/backlight"
-import { SparklesText } from "@/components/sparkles-text"
-import { Highlighter } from "@/components/highlighter"
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text"
+import { Backlight } from "@/components/magicui/backlight"
+import { SparklesText } from "@/components/magicui/sparkles-text"
+import { Highlighter } from "@/components/magicui/highlighter"
 
 export default function HomePage() {
   return (

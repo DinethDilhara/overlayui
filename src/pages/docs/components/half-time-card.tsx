@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import HalfTimeCard from "@/components/overlayui/16.half-time-card"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import HalfTimeCard from "@/components/overlayui/half-time-card"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 
 const CODE_SAMPLE = `import HalfTimeCard from "@/components/overlayui/16.half-time-card"
 import team01Logo from "@/assets/team-01-logo.png"

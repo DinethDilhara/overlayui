@@ -4,10 +4,10 @@ import {
   CodeBlockContent,
   CodeBlockIcon,
   CodeBlockGroup,
-} from '@/components/code-block'
+} from '@/components/shiki/code-block'
 
-import { CopyButton } from '@/components/copy-button'
-import { CodeblockShiki } from '@/components/shiki'
+import { CopyButton } from '@/components/shiki/copy-button'
+import { CodeblockShiki } from '@/components/shiki/shiki'
 
 import type { Languages } from '@/utils/shiki/highlight'
 

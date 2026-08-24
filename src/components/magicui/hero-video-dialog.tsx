@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Play, XIcon } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/utils/utils"
 
 type AnimationStyle =
   | "from-bottom"

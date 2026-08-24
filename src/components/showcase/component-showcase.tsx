@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"
 
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { PropsEditor, type PropDefinition } from "@/components/overlayui/showcase/props-editor"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { PropsEditor, type PropDefinition } from "@/components/showcase/props-editor"
+import { CodePreview } from "@/components/showcase/code-preview"
 import type { Languages } from '@/utils/shiki/highlight'
 
 interface ComponentShowcaseProps {

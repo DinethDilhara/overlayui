@@ -3,10 +3,10 @@ import { useState } from "react"
 import TeamPlayersCard, {
   type Player,
   type TeamPlayersCardProps,
-} from "@/components/overlayui/08.team-players-card"
+} from "@/components/overlayui/team-players-card"
 
-import { ComponentShowcase } from "@/components/overlayui/showcase/component-showcase"
-import type { PropDefinition } from "@/components/overlayui/showcase/props-editor"
+import { ComponentShowcase } from "@/components/showcase/component-showcase"
+import type { PropDefinition } from "@/components/showcase/props-editor"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import team01Logo from "@/assets/team-01-logo.png"

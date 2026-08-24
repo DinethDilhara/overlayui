@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import SubstitutesOutCard from "@/components/overlayui/18.substitutes-out-card"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import SubstitutesOutCard from "@/components/overlayui/substitutes-out-card"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import team01Logo from "@/assets/team-01-logo.png"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 
 const CODE_SAMPLE = `import SubstitutesOutCard from "@/components/overlayui/18.substitutes-out-card"
 import wcLogo from "@/assets/wc-logo.jpg"

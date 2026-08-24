@@ -2,10 +2,10 @@ import { useState } from "react"
 
 import YellowCardOverlay, {
   type YellowCardOverlayProps,
-} from "@/components/overlayui/20.yellow-card"
+} from "@/components/overlayui/yellow-card"
 
-import { ComponentShowcase } from "@/components/overlayui/showcase/component-showcase"
-import type { PropDefinition } from "@/components/overlayui/showcase/props-editor"
+import { ComponentShowcase } from "@/components/showcase/component-showcase"
+import type { PropDefinition } from "@/components/showcase/props-editor"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import teamLogo from "@/assets/team-01-logo.png"

@@ -1,9 +1,9 @@
 import { Link } from "react-router"
-import MatchIntro from "@/components/overlayui/01.match-intro"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import MatchIntro from "@/components/overlayui/match-intro"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 

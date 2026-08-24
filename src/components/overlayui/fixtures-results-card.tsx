@@ -1,4 +1,4 @@
-import OverlayLayout from "@/components/overlayui/ui/full-screen-card"
+import OverlayLayout from "@/components/overlayui/full-screen-card"
 import superLeagueLogo from "@/assets/ ssl.png"
 
 import team01Logo from "@/assets/team-01-logo.png"
@@ -6,118 +6,135 @@ import team02Logo from "@/assets/team-02-logo.webp"
 
 const DEFAULT_TEAM_LOGOS = [team01Logo, team02Logo]
 
-export interface FixturesTableRow {
+export type MatchStatus =
+  "UPCOMING" | "LIVE" | "HALFTIME" | "FINISHED" | "POSTPONED"
+
+export interface FixturesNResultsTableRow {
   matchNumber: number
 
   date: string
   month: string
 
-  time: string
-
   homeTeamLogo: string
   homeTeamName: string
+  homeTeamScore?: number
 
   awayTeamLogo: string
   awayTeamName: string
+  awayTeamScore?: number
+
+  status: MatchStatus
+  kickoffTime?: string
+  minute?: string
 }
 
-const FIXTURES_TABLE_ROWS: FixturesTableRow[] = [
+const FIXTURES_AND_RESULTS_TABLE_ROWS: FixturesNResultsTableRow[] = [
+  // FINISHED MATCH
   {
     matchNumber: 1,
+
     date: "11",
     month: "JUL",
-    time: "16:00",
 
     homeTeamLogo: DEFAULT_TEAM_LOGOS[0],
     homeTeamName: "NEW YOUNGERS",
+    homeTeamScore: 2,
 
     awayTeamLogo: DEFAULT_TEAM_LOGOS[1],
     awayTeamName: "BLUE STAR SC",
+    awayTeamScore: 1,
+
+    status: "FINISHED",
   },
+
+  // UPCOMING MATCH
   {
     matchNumber: 2,
+
     date: "12",
     month: "JUL",
-    time: "16:00",
 
     homeTeamLogo: DEFAULT_TEAM_LOGOS[1],
     homeTeamName: "COLOMBO FC",
 
     awayTeamLogo: DEFAULT_TEAM_LOGOS[0],
     awayTeamName: "DEFENDERS FC",
+
+    status: "UPCOMING",
+    kickoffTime: "16:00",
   },
+
+  // LIVE MATCH
   {
     matchNumber: 3,
+
     date: "17",
     month: "JUL",
-    time: "16:00",
 
     homeTeamLogo: DEFAULT_TEAM_LOGOS[0],
     homeTeamName: "BLUE STAR SC",
+    homeTeamScore: 1,
 
     awayTeamLogo: DEFAULT_TEAM_LOGOS[1],
     awayTeamName: "UPCOUNTRY LIONS",
+    awayTeamScore: 0,
+
+    status: "LIVE",
+    minute: "67'",
   },
+
+  // HALF TIME MATCH
   {
     matchNumber: 4,
+
     date: "18",
     month: "JUL",
-    time: "16:00",
 
     homeTeamLogo: DEFAULT_TEAM_LOGOS[1],
     homeTeamName: "RENOWN SC",
+    homeTeamScore: 0,
 
     awayTeamLogo: DEFAULT_TEAM_LOGOS[0],
     awayTeamName: "RATNAM SC",
+    awayTeamScore: 0,
+
+    status: "HALFTIME",
   },
+
+  // POSTPONED MATCH
   {
     matchNumber: 5,
+
     date: "20",
     month: "JUL",
-    time: "16:00",
 
     homeTeamLogo: DEFAULT_TEAM_LOGOS[0],
     homeTeamName: "SEA HAWKS FC",
 
     awayTeamLogo: DEFAULT_TEAM_LOGOS[1],
     awayTeamName: "RED STAR FC",
+
+    status: "POSTPONED",
   },
 ]
 
-export interface PointTableRow {
-  rank: number
-  teamLogo: string
-  teamName: string
-
-  played: number
-  won: number
-  drawn: number
-  lost: number
-
-  goalsFor: number
-  goalsAgainst: number
-  goalDifference: number
-
-  points: number
-}
-
-export interface FixturesCardProps {
+export interface FixturesNResultsCardProps {
   tournamentLogo?: string
   tournamentName?: string
   organizerName?: string
   title?: string
   weekNumber?: string
-  fixturesTableRows?: FixturesTableRow[]
+  fixturesTableRows?: FixturesNResultsTableRow[]
 }
 
-export default function FixturesCard({
+export default function FixturesNResultsCard({
   tournamentLogo,
   tournamentName = "SUPER LEAGUE 2026",
   organizerName = "FOOTBALL SRI LANKA",
-  title = "FIXTURES",
+  title = "FIXTURES & RESULTS",
   weekNumber = "WEEK 1",
-  fixturesTableRows = FIXTURES_TABLE_ROWS,
-}: FixturesCardProps) {
+  fixturesTableRows = FIXTURES_AND_RESULTS_TABLE_ROWS,
+}: FixturesNResultsCardProps) {
   const logoBlack = "#0D0D0D"
 
   const rowCount = fixturesTableRows.length
@@ -132,6 +149,25 @@ export default function FixturesCard({
       : rowCount <= 7
         ? "clamp(1.4rem, 2vw, 2rem)"
         : "clamp(1rem, 1.5vw, 1.5rem)"
+
+  const getMatchStatus = (row: FixturesNResultsTableRow) => {
+    switch (row.status) {
+      case "UPCOMING":
+        return row.kickoffTime
+
+      case "LIVE":
+        return `${row.minute} ${row.homeTeamScore}-${row.awayTeamScore}`
+
+      case "HALFTIME":
+        return `HT ${row.homeTeamScore} - ${row.awayTeamScore}`
+
+      case "FINISHED":
+        return `${row.homeTeamScore} - ${row.awayTeamScore}`
+
+      case "POSTPONED":
+        return "P - P"
+    }
+  }
 
   return (
     <OverlayLayout>
@@ -182,7 +218,7 @@ export default function FixturesCard({
           {/* TABLE */}
           <div className="relative z-10 flex h-full min-h-0 flex-col p-4">
             {/* TABLE HEADER */}
-            <div className="mb-2 grid grid-cols-[clamp(110px,7vw,140px)_clamp(170px,12vw,230px)_clamp(140px,9vw,180px)_1fr] gap-6">
+            <div className="mb-2 grid grid-cols-[clamp(110px,7vw,140px)_clamp(170px,12vw,230px)_1fr_clamp(170px,12vw,230px)] gap-6">
               {/* Match No */}
               <div className="flex h-20 items-center justify-center rounded-tl-2xl rounded-br-2xl bg-[#921E23] text-[clamp(1.5rem,2vw,1.875rem)] font-bold text-white">
                 M. NO
@@ -193,14 +229,14 @@ export default function FixturesCard({
                 DATE
               </div>
 
-              {/* Time */}
-              <div className="flex h-20 items-center justify-center rounded-tl-2xl rounded-br-2xl bg-[#921E23] text-[clamp(1.5rem,2vw,1.875rem)] font-bold text-white">
-                TIME
-              </div>
-
               {/* Match */}
               <div className="flex h-20 items-center justify-center rounded-tl-2xl rounded-br-2xl bg-[#921E23] text-[clamp(1.5rem,2vw,1.875rem)] font-bold text-white">
                 MATCH
+              </div>
+
+              {/* RESULT */}
+              <div className="flex h-20 items-center justify-center rounded-tl-2xl rounded-br-2xl bg-[#921E23] text-[clamp(1.5rem,2vw,1.875rem)] font-bold text-white">
+                RESULT
               </div>
             </div>
 
@@ -215,7 +251,7 @@ export default function FixturesCard({
               {fixturesTableRows.map((match) => (
                 <div
                   key={match.matchNumber}
-                  className="grid grid-cols-[clamp(110px,7vw,140px)_clamp(170px,12vw,230px)_clamp(140px,9vw,180px)_1fr] gap-6"
+                  className="grid grid-cols-[clamp(110px,7vw,140px)_clamp(170px,12vw,230px)_1fr_clamp(170px,12vw,230px)] gap-6"
                 >
                   {/* MATCH NUMBER */}
                   <div
@@ -235,16 +271,6 @@ export default function FixturesCard({
                     }}
                   >
                     {match.date} - {match.month}
-                  </div>
-
-                  {/* TIME */}
-                  <div
-                    className="flex items-center justify-center rounded-tl-2xl rounded-br-2xl bg-black font-semibold text-white"
-                    style={{
-                      fontSize: rowTextSize,
-                    }}
-                  >
-                    {match.time}
                   </div>
 
                   {/* MATCH */}
@@ -290,6 +316,15 @@ export default function FixturesCard({
                         />
                       </div>
                     </div>
+                  </div>
+
+                  <div
+                    className="flex items-center justify-center rounded-tl-2xl rounded-br-2xl bg-black font-bold text-white"
+                    style={{
+                      fontSize: rowTextSize,
+                    }}
+                  >
+                    {getMatchStatus(match)}
                   </div>
                 </div>
               ))}

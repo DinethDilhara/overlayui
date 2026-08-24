@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { ArrowRight } from "lucide-react"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 
 const INSTALL_CMD = `# Using pnpm (recommended)
 pnpm add lucide-react clsx tailwind-merge motion @base-ui/react

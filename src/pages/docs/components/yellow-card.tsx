@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import YellowCardOverlay from "@/components/overlayui/yellow-card"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import team01Logo from "@/assets/team-01-logo.png"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 
 const CODE_SAMPLE = `import YellowCardOverlay from "@/components/overlayui/20.yellow-card"
 import wcLogo from "@/assets/wc-logo.jpg"

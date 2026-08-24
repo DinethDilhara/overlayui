@@ -1,14 +1,14 @@
 import { Link } from "react-router"
-import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
-import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import TeamFormationCard from "@/components/overlayui/team-formation-card"
+import DesktopPreview from "@/components/showcase/desktop-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import wcLogo from "@/assets/wc-logo.jpg"
 import team02Logo from "@/assets/team-02-logo.webp"
 import { ComponentDocBar } from "@/components/layout/component-doc-bar"
-import { PropsTable } from "@/components/props-table"
+import { PropsTable } from "@/components/showcase/props-table"
 
 const CODE_SAMPLE = `import TeamFormationCard from "@/components/overlayui/10.team-formation-card"
 import wcLogo from "@/assets/wc-logo.jpg"

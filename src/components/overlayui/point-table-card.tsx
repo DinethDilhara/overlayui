@@ -1,4 +1,4 @@
-import OverlayLayout from "@/components/overlayui/ui/full-screen-card"
+import OverlayLayout from "@/components/overlayui/full-screen-card"
 import superLeagueLogo from "@/assets/ ssl.png"
 
 import team01Logo from "@/assets/team-01-logo.png"

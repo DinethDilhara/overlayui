@@ -1,4 +1,4 @@
-import OverlayLayout from "@/components/overlayui/ui/full-screen-card"
+import OverlayLayout from "@/components/overlayui/full-screen-card"
 
 export interface MatchIntroProps {
   teamOneName: string

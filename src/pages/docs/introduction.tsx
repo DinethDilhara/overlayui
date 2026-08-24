@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { ArrowRight, Layers, Monitor } from "lucide-react"
-import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import { CodePreview } from "@/components/showcase/code-preview"
 
 const SAMPLE_USAGE = `import MatchIntro from "@/components/overlayui/01.match-intro"
 import wcLogo from "@/assets/wc-logo.jpg"
