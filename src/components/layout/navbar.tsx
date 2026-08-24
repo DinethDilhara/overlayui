@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { OverlayuiIcon } from "@/components/layout/overlayui-icon"
 import { cn } from "@/utils/utils"
 
 export type NavbarVariant = "default" | "compact" | "docs" | "home"
@@ -60,9 +61,7 @@ export function Navbar({
                         to="/"
                         className="group flex items-center gap-2.5 text-base font-semibold tracking-tight transition-colors hover:text-foreground/80"
                     >
-                        <div className="flex size-8.5 items-center justify-center rounded-lg bg-primary text-primary-foreground font-black text-base shadow-xs transition-transform group-hover:scale-105">
-                            ) :
-                        </div>
+                        <OverlayuiIcon className="group-hover:scale-105" />
                         <span className="font-bold text-xl tracking-tight text-foreground">
                             Overlay<span className="text-muted-foreground font-normal">UI</span>
                         </span>

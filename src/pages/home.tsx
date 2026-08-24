@@ -1,7 +1,9 @@
 import { Link } from "react-router"
 import { Navbar } from "@/components/layout/navbar"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles, MoveRight } from "lucide-react"
 import StickyFooter from "@/components/layout/sticky-footer"
+import { cn } from "@/utils/utils"
+import { AnimatedShinyText } from "@/components/animated-shiny-text"
 
 export default function HomePage() {
   return (
@@ -15,31 +17,19 @@ export default function HomePage() {
                 {/* Badge */}
                 <Link
                   to="/docs/introduction"
-                  className="group mx-auto flex w-fit items-center gap-2.5 rounded-full border border-border/80 bg-accent/40 p-1 pl-4 transition-colors duration-300 hover:bg-accent/80"
+                  className={cn(
+                    "group mx-auto hidden w-fit rounded-full border border-border/80 bg-accent/40 transition-all ease-in hover:cursor-pointer hover:bg-accent/80 sm:block"
+                  )}
                 >
-                  <span className="text-sm font-semibold text-foreground">
-                    New:
-                  </span>
+                  <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 text-sm transition ease-out hover:text-foreground hover:duration-300">
+                    <span>✨ Introducing Overlay UI</span>
 
-                  <span className="text-sm text-muted-foreground">
-                    Introducing the next-gen broadcast overlays
-                  </span>
-
-                  <div className="size-6 overflow-hidden rounded-full bg-foreground/10 duration-500">
-                    <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                      <span className="flex size-6 items-center justify-center">
-                        <ArrowRight className="size-3 text-foreground" />
-                      </span>
-
-                      <span className="flex size-6 items-center justify-center">
-                        <ArrowRight className="size-3 text-foreground" />
-                      </span>
-                    </div>
-                  </div>
+                    <MoveRight className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                  </AnimatedShinyText>
                 </Link>
 
                 {/* Title */}
-                <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-semibold tracking-tight md:text-6xl lg:mt-12 xl:text-7xl">
+                <h1 className="mx-auto mt-4 max-w-4xl text-balance text-5xl font-semibold tracking-tight md:text-6xl lg:mt-8 xl:text-7xl">
                   Broadcast overlays, beautifully connected
                 </h1>
 
@@ -89,8 +79,6 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-
-      {/* Sticky Footer */}
       <StickyFooter />
     </div>
   )

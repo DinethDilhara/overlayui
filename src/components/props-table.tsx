@@ -32,25 +32,25 @@ export function PropsTable({
         <table className="w-full text-left text-xs">
           <thead className="border-b border-border/70 bg-accent/40 text-muted-foreground font-semibold">
             <tr>
-              <th className="p-3">Prop</th>
-              <th className="p-3">Type</th>
-              <th className="p-3">Required</th>
-              <th className="p-3">Description</th>
+              <th className="px-2.5 py-2 sm:p-3 whitespace-nowrap">Prop</th>
+              <th className="px-2.5 py-2 sm:p-3 whitespace-nowrap">Type</th>
+              <th className="px-2.5 py-2 sm:p-3 whitespace-nowrap">Required</th>
+              <th className="px-2.5 py-2 sm:p-3">Description</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border/40 font-mono">
             {rows.map((prop) => (
               <tr key={prop.name} className="hover:bg-accent/20 transition-colors">
-                <td className="p-3 font-semibold text-foreground">{prop.name}</td>
-                <td className="p-3 text-cyan-600 dark:text-cyan-400">{prop.type}</td>
-                <td className="p-3 font-sans">
+                <td className="px-2.5 py-2 sm:p-3 font-semibold text-foreground whitespace-nowrap">{prop.name}</td>
+                <td className="px-2.5 py-2 sm:p-3 text-cyan-600 dark:text-cyan-400 whitespace-nowrap">{prop.type}</td>
+                <td className="px-2.5 py-2 sm:p-3 font-sans whitespace-nowrap">
                   {prop.required ? (
                     <span className="text-red-500 font-medium">Yes</span>
                   ) : (
                     <span className="text-muted-foreground">No</span>
                   )}
                 </td>
-                <td className="p-3 font-sans text-muted-foreground">{prop.description}</td>
+                <td className="px-2.5 py-2 sm:p-3 font-sans text-muted-foreground leading-snug sm:leading-normal min-w-[180px] sm:min-w-0">{prop.description}</td>
               </tr>
             ))}
           </tbody>
