@@ -31,11 +31,6 @@ export default function ComponentsIndexPage() {
     <div className="space-y-8 max-w-5xl">
       {/* Header */}
       <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-accent/50 px-3 py-0.5 text-xs font-medium text-muted-foreground mb-3">
-          <span>Documentation</span>
-          <span>·</span>
-          <span>Components Directory</span>
-        </div>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">

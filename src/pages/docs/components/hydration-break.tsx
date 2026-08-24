@@ -30,11 +30,6 @@ export default function HydrationBreakDocsPage() {
     <div className="space-y-10 max-w-4xl">
       <ComponentDocBar slug="hydration-break" />
       <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-accent/50 px-3 py-0.5 text-xs font-medium text-muted-foreground mb-3">
-          <span>Components</span>
-          <span>·</span>
-          <span>Score Bugs</span>
-        </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
           Hydration Break
         </h1>
