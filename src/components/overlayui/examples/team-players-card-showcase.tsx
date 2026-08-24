@@ -115,6 +115,8 @@ ${props.players
       }
       preview={<TeamPlayersCard {...props} />}
       code={code}
+      language="tsx"
+      filename="team-players-card.tsx"
     />
   )
 }

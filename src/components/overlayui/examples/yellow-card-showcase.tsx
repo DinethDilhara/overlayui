@@ -79,6 +79,8 @@ export default function YellowCardShowcase() {
       }
       preview={<YellowCardOverlay {...props} />}
       code={code}
+      language="tsx"
+      filename="yellow-card-overlay.tsx"
     />
   )
 }

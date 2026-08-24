@@ -3,20 +3,20 @@ import type { ReactNode } from "react"
 import DesktopPreview from "@/components/overlayui/showcase/desktop-preview"
 import { PropsEditor, type PropDefinition } from "@/components/overlayui/showcase/props-editor"
 import { CodePreview } from "@/components/overlayui/showcase/code-preview"
+import type { Languages } from '@/utils/shiki/highlight'
 
 interface ComponentShowcaseProps {
   title: string
   description?: string
 
   propDefinitions: PropDefinition[]
-
   values: Record<string, unknown>
-
   onChange: (name: string, value: unknown) => void
-
   preview: ReactNode
 
   code: string
+  language?: Languages
+  filename: string
 }
 
 export function ComponentShowcase({
@@ -27,6 +27,8 @@ export function ComponentShowcase({
   onChange,
   preview,
   code,
+  language,
+  filename,
 }: ComponentShowcaseProps) {
   return (
     <div className="w-full">
@@ -53,7 +55,11 @@ export function ComponentShowcase({
 
       {/* Code */}
       <div className="mt-8">
-        <CodePreview code={code} />
+        <CodePreview 
+        code={code}
+        filename={filename}
+        language={language}
+       />
       </div>
     </div>
   )
