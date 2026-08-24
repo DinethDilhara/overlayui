@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 
 import { uMiniMapOpenSound } from "@/lib/u-mini-map-open"
-import { cn } from "@/lib/utils"
+import { cn } from "@/utils/utils"
 import { useSound } from "@/hooks/use-sound"
 
 import {
