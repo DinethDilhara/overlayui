@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useState } from "react"
 
 import YellowCardOverlay, {
   type YellowCardOverlayProps,
@@ -50,7 +50,7 @@ export default function YellowCardShowcase() {
 
   const updateProp = <K extends keyof YellowCardOverlayProps>(
     key: K,
-    value: YellowCardOverlayProps[K]
+    value: YellowCardOverlayProps[K],
   ) => {
     setProps((current) => ({
       ...current,
@@ -58,31 +58,26 @@ export default function YellowCardShowcase() {
     }))
   }
 
-  const code = useMemo(() => {
-    return `<YellowCardOverlay
-            tournamentLogo={wcLogo}
-            teamLogo={teamLogo}
-            playerName=${JSON.stringify(props.playerName)}
-            playerNumber={${JSON.stringify(props.playerNumber)}}
-            />`
-  }, [props])
+  const code = `<YellowCardOverlay
+  tournamentLogo={wcLogo}
+  teamLogo={teamLogo}
+  playerName=${JSON.stringify(props.playerName)}
+  playerNumber={${JSON.stringify(props.playerNumber)}}
+/>`
+
   return (
     <ComponentShowcase
       title="Yellow Card"
       description="Displays a yellow card event with player, team, and tournament information."
       propDefinitions={PROP_DEFINITIONS}
       values={props}
-      onChange={(key, value) => {
-        updateProp(key as keyof YellowCardOverlayProps, value as never)
-      }}
-      preview={
-        <YellowCardOverlay
-          teamLogo={props.teamLogo}
-          playerNumber={props.playerNumber}
-          playerName={props.playerName}
-          tournamentLogo={props.tournamentLogo}
-        />
+      onChange={(key, value) =>
+        updateProp(
+          key as keyof YellowCardOverlayProps,
+          value as never,
+        )
       }
+      preview={<YellowCardOverlay {...props} />}
       code={code}
     />
   )

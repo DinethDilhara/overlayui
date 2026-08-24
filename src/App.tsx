@@ -25,12 +25,14 @@ import RedCardOverlay from "@/components/overlayui/21.red-card"
 import GoalNameCard from "@/components/overlayui/22.goal-name-card"
 
 import OverlayShowcase from "@/components/overlay-showcase"
+import TeamPlayersCardShowcase from "@/components/overlayui/examples/team-players-card-showcase"
 
 import team01Logo from "@/assets/team-01-logo.png"
 import team02Logo from "@/assets/team-02-logo.webp"
 import wcLogo from "@/assets/wc-logo.jpg"
 import playerImgOne from "@/assets/player-1-img.png"
 import playerImgTwo from "@/assets/player-2-img.png"
+import YellowCardShowcase from "./components/overlayui/examples/yellow-card-showcase"
 
 const sections = [
   {
@@ -332,6 +334,27 @@ export default function App() {
         <ThemeToggle />
         <SectionNavigation />
         <SectionTitle />
+
+        {/* Team Players Card Showcase */}
+        <section
+          id="team-players-card"
+          className="w-full border-b border-gray-300"
+        >
+          <div className="mx-auto w-full max-w-7xl px-6 py-20">
+            <TeamPlayersCardShowcase />
+          </div>
+        </section>
+
+        
+        {/* Yellow Card Showcase */}
+        <section
+          id="yellow-card-showcase"
+          className="w-full border-b border-gray-300"
+        >
+          <div className="mx-auto w-full max-w-7xl px-6 py-20">
+            <YellowCardShowcase />
+          </div>
+        </section>
 
         {sections.map((section, index) => (
           <section

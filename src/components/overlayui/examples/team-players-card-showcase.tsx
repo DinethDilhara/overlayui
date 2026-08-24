@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useState } from "react"
 
 import TeamPlayersCard, {
   type Player,
@@ -80,7 +80,7 @@ export default function TeamPlayersCardShowcase() {
 
   const updateProp = <K extends keyof TeamPlayersCardProps>(
     key: K,
-    value: TeamPlayersCardProps[K]
+    value: TeamPlayersCardProps[K],
   ) => {
     setProps((current) => ({
       ...current,
@@ -88,44 +88,32 @@ export default function TeamPlayersCardShowcase() {
     }))
   }
 
-  const code = useMemo(() => {
-    return `<TeamPlayersCard
-        tournamentLogo={wcLogo}
-        teamLogo={team01Logo}
-        teamName="${props.teamName}"
-        headCoachName="${props.headCoachName}"
-        captainImage={playerImgOne}
-        players={[
-            ${props.players
-              ?.map(
-                (player) =>
-                  `    { number: ${JSON.stringify(player.number)}, name: ${JSON.stringify(
-                    player.name
-                  )} },`
-              )
-              .join("\n")}
-                ]}
-                />`
-  }, [props])
+  const code = `<TeamPlayersCard
+  tournamentLogo={wcLogo}
+  teamLogo={team01Logo}
+  teamName="${props.teamName}"
+  headCoachName="${props.headCoachName}"
+  captainImage={playerImgOne}
+  players={[
+${props.players
+  .map(
+    (player) =>
+      `    { number: ${JSON.stringify(player.number)}, name: ${JSON.stringify(player.name)} },`,
+  )
+  .join("\n")}
+  ]}
+/>`
+
   return (
     <ComponentShowcase
       title="Team Players Card"
       description="Displays a team's tournament information, players, head coach, team logo, and captain."
       propDefinitions={PROP_DEFINITIONS}
       values={props}
-      onChange={(key, value) => {
+      onChange={(key, value) =>
         updateProp(key as keyof TeamPlayersCardProps, value as never)
-      }}
-      preview={
-        <TeamPlayersCard
-          tournamentLogo={props.tournamentLogo}
-          teamLogo={props.teamLogo}
-          teamName={props.teamName}
-          headCoachName={props.headCoachName}
-          captainImage={props.captainImage}
-          players={props.players}
-        />
       }
+      preview={<TeamPlayersCard {...props} />}
       code={code}
     />
   )
