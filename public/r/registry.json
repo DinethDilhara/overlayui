@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "overlayui",
+  "homepage": "https://overlayui.vercel.app",
+  "items": [
+    {
+      "name": "hydration-break-bug",
+      "type": "registry:ui",
+      "title": "Hydration Break Bug",
+      "description": "A hydration break broadcast overlay component.",
+      "files": [
+        {
+          "path": "registry/default/primitives/hydration-break-bug.tsx",
+          "type": "registry:ui",
+          "target": "components/overlayui/hydration-break-bug.tsx"
+        }
+      ]
+    }
+  ]
+}

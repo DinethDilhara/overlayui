@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hydration-break-bug",
+  "title": "Hydration Break Bug",
+  "description": "A hydration break broadcast overlay component.",
+  "files": [
+    {
+      "path": "registry/default/primitives/hydration-break-bug.tsx",
+      "content": "import type { ReactNode } from \"react\"\n\nexport interface HydrationBreakBugProps {\n  tournamentLogo?: ReactNode | string\n}\n\nexport default function HydrationBreakBug({\n  tournamentLogo,\n}: HydrationBreakBugProps) {\n  const green = \"#257723\"\n  const red = \"#921E23\"\n  const blue = \"#0775B1\"\n  const yellow = \"#D2A639\"\n  const logoBlack = \"#0D0D0D\"\n\n  return (\n    <div className=\"relative h-screen w-screen overflow-hidden bg-transparent\">\n      {/* Lower Third Anchor */}\n      <div className=\"absolute bottom-12 left-24 flex items-end gap-[0.8vw] font-sans\">\n        {/* Main Banner */}\n        <div className=\"relative flex h-[5vw] w-[24vw] max-w-105 min-w-[320px] items-center justify-center overflow-hidden rounded-xl shadow-2xl\">\n          {/* Gradient Background */}\n          <div\n            className=\"absolute inset-0\"\n            style={{\n              background: `linear-gradient(\n                to right,\n                ${green} 0%,\n                ${green} 20%,\n                ${yellow} 20%,\n                ${yellow} 40%,\n                ${blue} 40%,\n                ${blue} 60%,\n                ${red} 60%,\n                ${red} 80%,\n                ${green} 80%,\n                ${green} 100%\n              )`,\n            }}\n          />\n\n          {/* Black Panel */}\n          <div className=\"absolute inset-[0.35vw] flex items-center justify-center rounded-xl bg-black\">\n            <span className=\"text-[1.9vw] font-bold text-white uppercase\">\n              HYDRATION BREAK\n            </span>\n          </div>\n        </div>\n\n        {/* Tournament Logo */}\n        <div\n          className=\"flex h-[3vw] min-h-14 w-[3vw] min-w-14 items-center justify-center self-center overflow-hidden rounded-2xl shadow-xl\"\n          style={{ backgroundColor: logoBlack }}\n        >\n          {typeof tournamentLogo === \"string\" ? (\n            <img\n              src={tournamentLogo}\n              alt=\"Tournament Logo\"\n              className=\"h-full w-full object-contain\"\n            />\n          ) : (\n            tournamentLogo\n          )}\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": "components/overlayui/hydration-break-bug.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
