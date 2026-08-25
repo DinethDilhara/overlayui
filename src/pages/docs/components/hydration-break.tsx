@@ -1,5 +1,5 @@
 import { Link } from "react-router"
-import HydrationBreakBug from "@/components/overlayui/bug-hydration-break"
+import HydrationBreakBug from "@/components/overlayui/hydration-break-bug"
 import DesktopPreview from "@/components/showcase/desktop-preview"
 import { CodePreview } from "@/components/showcase/code-preview"
 import { getAdjacentComponents } from "@/config/components"
